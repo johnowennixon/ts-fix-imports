@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
-import {ArgumentParser, ArgumentParserOptions} from "argparse"
-import * as fs from "fs"
+import * as fs from "node:fs"
+import {ArgumentParser} from "argparse"
+import type {ArgumentParserOptions} from "argparse"
 import * as glob from "glob"
 
 interface ParsedArgs {
@@ -33,7 +34,7 @@ function fix_imports(path: string, verbose: boolean): void {
 
   let lines = text_in.split(/\r?\n/)
 
-  const regex = new RegExp('^(import .* from "\\./.*)(";)$')
+  const regex = new RegExp(String.raw`^(import .* from "\./.*)(";)$`)
 
   lines = lines.map((line) => line.replace(regex, "$1.js$2"))
 

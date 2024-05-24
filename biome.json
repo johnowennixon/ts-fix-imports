@@ -1,0 +1,105 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "files": {
+    "ignore": [
+      "dist",
+      "node_modules"
+    ],
+    "ignoreUnknown": true
+  },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "ignore": [],
+    "attributePosition": "auto",
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 120
+  },
+  "javascript": {
+    "formatter": {
+      "arrowParentheses": "always",
+      "bracketSameLine": false,
+      "bracketSpacing": false,
+      "jsxQuoteStyle": "double",
+      "quoteProperties": "asNeeded",
+      "semicolons": "asNeeded",
+      "trailingComma": "all"
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "complexity": {
+        "noBannedTypes": "error",
+        "noForEach": "error",
+        "noUselessRename": "error",
+        "noUselessTernary": "error",
+        "useArrowFunction": "error",
+        "useOptionalChain": "error",
+        "useLiteralKeys": "off",
+        "useRegexLiterals": "off"
+      },
+      "correctness": {
+        "noSwitchDeclarations": "error",
+        "noUnnecessaryContinue": "error",
+        "noUnusedImports": "error",
+        "noUnusedVariables": "error",
+        "noVoidTypeReturn": "off"
+      },
+      "performance": {
+        "noAccumulatingSpread": "error",
+        "noDelete": "off"
+      },
+      "style": {
+        "noNamespace": "error",
+        "noNegationElse": "error",
+        "noNonNullAssertion": "error",
+        "noParameterAssign": "off",
+        "noParameterProperties": "error",
+        "noShoutyConstants": "error",
+        "noUnusedTemplateLiteral": "error",
+        "noUselessElse": "error",
+        "useBlockStatements": "error",
+        "useImportType": "error",
+        "useCollapsedElseIf": "error",
+        "useConsistentArrayType": {
+          "level": "error",
+          "options": {
+            "syntax": "generic"
+          }
+        },
+        "useFilenamingConvention": {
+          "level": "error",
+          "options": {
+            "requireAscii": true,
+            "filenameCases": ["kebab-case"]
+          }
+        },
+        "useForOf": "error",
+        "useNamingConvention": "off",
+        "useNodeAssertStrict": "error",
+        "useNodejsImportProtocol": "error",
+        "useShorthandAssign": "error",
+        "useSingleCaseStatement": "error",
+        "useTemplate": "off"
+      },
+      "suspicious": {
+        "noConfusingVoidType": "error",
+        "noDoubleEquals": "error",
+        "noDuplicateTestHooks": "error",
+        "noEmptyBlockStatements": "error",
+        "noExplicitAny": "error",
+        "noGlobalIsNan": "error",
+        "noImplicitAnyLet": "error",
+        "noRedeclare": "error",
+        "useAwait": "off"
+      }
+    }
+  },
+  "organizeImports": {
+    "enabled": true
+  }
+}

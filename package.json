@@ -1,39 +1,44 @@
 {
   "name": "@johnowennixon/ts-fix-imports",
   "version": "0.1.0",
-  "description": "Fix imports for Javascript files generated from TypeScript.",
+  "description": "Fix imports for Javascript files generated from TypeScript",
+  "keywords": [
+    "imports"
+  ],
   "license": "0BSD",
   "author": {
-    "name": "John Owen Nixon",
     "email": "john.owen.nixon@gmail.com",
-    "url": "https://johnowennixon.com"
+    "name": "John Owen Nixon",
+    "url": "https://johnowennixon.com/"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/johnowennixon/ts-fix-imports.git"
   },
-  "keywords": [
-    "imports"
-  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "type": "module",
   "bin": {
     "ts-fix-imports": "dist/ts-fix-imports.js"
   },
-  "devDependencies": {
-    "@johnowennixon/chmodx": "^1.0.0",
-    "@johnowennixon/okay": "^0.0.3",
-    "@types/argparse": "^2.0.10",
-    "@types/glob": "^7.2.0",
-    "@types/node": "^20.2.5",
-    "prettier": "^2.8.8",
-    "rimraf": "^5.0.1",
-    "typescript": "^5.0.4"
-  },
   "scripts": {
     "build": "rimraf dist && tsc && chmodx --package && okay",
-    "check": "prettier 'src/**/*.ts' --list-different && okay"
+    "lint": "biome check src && okay",
+    "test": "exit 0"
   },
   "dependencies": {
-    "argparse": "^2.0.1",
-    "glob": "^7.2.3"
+    "argparse": "2.0.1",
+    "glob": "10.4.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.7.3",
+    "@johnowennixon/chmodx": "2.0.0",
+    "@johnowennixon/okay": "3.1.0",
+    "@types/argparse": "2.0.16",
+    "@types/glob": "8.1.0",
+    "@types/node": "20.12.12",
+    "rimraf": "5.0.7",
+    "typescript": "5.4.5"
   }
 }
